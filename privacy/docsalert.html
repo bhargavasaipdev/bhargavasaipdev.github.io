@@ -49,13 +49,24 @@
         .back-link:hover {
             text-decoration: underline;
         }
-        h1.policy-title, h2 {
+        h1.policy-title, h2, h3 {
             color: var(--text-heading);
             font-weight: 700;
         }
         h2 {
             font-size: 1.25rem;
-            margin-top: 1.75rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.05rem;
+            margin-top: 1.25rem;
+        }
+        code {
+            color: #1e40af;
+            background-color: #eff6ff;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.35rem;
+            font-size: 0.875em;
         }
         li {
             margin-bottom: 0.5rem;
@@ -78,41 +89,90 @@
             </div>
 
             <h1 class="h2 policy-title mb-2">Privacy Policy</h1>
-            <p class="mb-0"><strong>Effective Date:</strong> May 1, 2024 | <strong>Developer:</strong> Ai Syntax</p>
+            <p class="text-secondary small mb-0">
+                <strong>Last Updated:</strong> November 26, 2026 &nbsp;|&nbsp;
+                <strong>Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti
+            </p>
 
             <hr class="my-4" style="border-color: var(--border); opacity: 1;">
 
-            <h2>1. Information Collection and Local Storage</h2>
-            <p>DocsAlert operates with a strict <strong>privacy-first, on-device storage architecture</strong>:</p>
+            <p>
+                Welcome to <strong>DocsAlert</strong>, operated by <strong>Ai Syntax</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). We respect your privacy and are committed to protecting the personal data and document information you manage using our application.
+            </p>
+            <p>
+                This Privacy Policy explains how DocsAlert handles your information, what data is processed, and your rights regarding your data.
+            </p>
+
+            <h2>1. Information Collection and Storage</h2>
+
+            <h3>A. Local On-Device Data (100% Private to You)</h3>
+            <p>DocsAlert is designed with a <strong>privacy-first, on-device storage architecture</strong>:</p>
             <ul>
-                <li><strong>Local Document Metadata:</strong> Document names, categories, issue/expiry dates, notes, and numbers (PAN, Aadhaar, Passport) are saved 100% locally on your phone using an encrypted SQLite database.</li>
-                <li><strong>Item Vault Attachments:</strong> All photo files and PDFs stored in the Item Vault remain safely stored in your device's private internal directory.</li>
-                <li><strong>No Server Uploads:</strong> DocsAlert does not run cloud servers. Your documents and personal files are <strong>never uploaded or shared</strong> with the developer or any external server.</li>
+                <li><strong>Document &amp; Credential Metadata:</strong> All document names, categories, issue/expiry dates, notes, and credential numbers (PAN, Aadhaar, Passport, etc.) are saved locally on your device in a private, isolated SQLite database.</li>
+                <li><strong>Item Vault &amp; Attachment Files:</strong> All photos and PDF files stored in the Item Vault or attached to Family Member profiles are saved in DocsAlert&rsquo;s private internal storage directory on your phone.</li>
+                <li><strong>No Server Uploads:</strong> DocsAlert does not operate external cloud servers or databases. Your document metadata, photos, and files are <strong>never uploaded, transmitted, or shared</strong> with Ai Syntax or any external third party.</li>
             </ul>
 
-            <h2>2. Third-Party Advertising (Google AdMob)</h2>
-            <p>DocsAlert uses <strong>Google Mobile Ads (AdMob)</strong> to serve advertisements. AdMob may process certain technical device identifiers to deliver relevant ads and prevent fraud:</p>
+            <h3>B. App Preferences &amp; Security Toggles</h3>
+            <p>
+                Your preferences (Theme settings, Notification sound choices, Daily alarm time, App Lock settings, and Number masking toggles) are stored locally on your device via Android DataStore.
+            </p>
+
+            <h2>2. Third-Party Services and Advertising (Google AdMob)</h2>
+            <p>
+                DocsAlert uses <strong>Google Mobile Ads (AdMob)</strong> to serve advertisements within the application. While DocsAlert does not collect or transmit your personal documents, Google AdMob may automatically process certain technical device identifiers to deliver relevant ads, prevent ad fraud, and provide analytics:
+            </p>
+            <p class="fw-semibold mb-2">Information Processed by Google AdMob:</p>
             <ul>
                 <li>Device Advertising ID (GAID)</li>
-                <li>IP Address &amp; General Location</li>
-                <li>App Interaction Logs &amp; Crash Diagnostics</li>
+                <li>IP Address &amp; General Location (Country/City level)</li>
+                <li>App Interaction &amp; Performance Diagnostics</li>
+                <li>Crash logs and System Performance metrics</li>
             </ul>
+            <p>
+                This data is processed directly by Google in accordance with
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Privacy Policy</a>.
+            </p>
 
-            <h2>3. Requested Android Permissions</h2>
+            <h2>3. Device Permissions Requested</h2>
+            <p>DocsAlert requests specific Android permissions strictly to provide its core features:</p>
             <ul>
-                <li><strong>Notifications:</strong> Needed to send timely expiry alerts and daily task notifications.</li>
-                <li><strong>Exact Alarms:</strong> Needed to trigger scheduled alarm reminders accurately.</li>
-                <li><strong>Biometrics:</strong> Used locally to verify identity when opening the optional App Lock.</li>
+                <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Required to send you timely expiry alerts and daily task notifications.</li>
+                <li><strong>Exact Alarms (<code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>):</strong> Required to trigger alarm alerts precisely at your scheduled time.</li>
+                <li><strong>Full-Screen Alerts (<code>USE_FULL_SCREEN_INTENT</code>):</strong> Allows full-screen caller-style alarm overlays over the lock screen for critical document expiration alerts.</li>
+                <li><strong>Biometrics (<code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code>):</strong> Used locally on-device to verify your identity when unlocking the optional App Lock feature.</li>
             </ul>
 
-            <h2>4. Contact Us</h2>
-            <p class="mb-1">If you have any questions regarding this Privacy Policy, please contact us at:</p>
-            <p class="mb-0"><strong>Email:</strong> <a href="mailto:aisyntax.dev@gmail.com">aisyntax.dev@gmail.com</a></p>
+            <h2>4. Data Security and User Control</h2>
+            <ul>
+                <li><strong>On-Device Security:</strong> You can enable Biometric App Lock in Settings to protect DocsAlert when backgrounded.</li>
+                <li><strong>Masking Sensitive Numbers:</strong> You can enable Mask Sensitive Numbers in Settings to obscure document numbers by default.</li>
+                <li><strong>Backup &amp; Restore:</strong> DocsAlert allows you to export your data and files to a local JSON backup file. You retain full control over where this file is stored and shared.</li>
+                <li><strong>Data Deletion:</strong> Since all data is stored locally, uninstalling DocsAlert or clearing the app data in Android Settings permanently deletes all stored items, family profiles, and vault files from your device.</li>
+            </ul>
+
+            <h2>5. Children&rsquo;s Privacy</h2>
+            <p>
+                DocsAlert is a general-purpose document management and reminder application intended for adult users. We do not knowingly collect personal information from children under the age of 13.
+            </p>
+
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>
+                We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated &ldquo;Last Updated&rdquo; date.
+            </p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or DocsAlert, please contact us at:</p>
+            <div class="bg-light border rounded-3 p-3">
+                <p class="mb-1"><strong>Publisher / Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti</p>
+                <p class="mb-1"><strong>Contact Email:</strong> <a href="mailto:bhargavasaip.dev@gmail.com">bhargavasaip.dev@gmail.com</a></p>
+                <p class="mb-0"><strong>Location:</strong> India, Andhra Pradesh</p>
+            </div>
         </div>
     </main>
 
     <footer class="text-center py-4 text-secondary small">
-        &copy; 2024 Ai Syntax. All rights reserved.
+        &copy; 2026 Ai Syntax. All rights reserved.
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
