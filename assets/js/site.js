@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    document.documentElement.classList.add('has-js');
+
     const navbar = document.querySelector('.site-navbar');
     const heroShell = document.querySelector('.hero-shell');
     const progressBar = document.querySelector('.scroll-progress');
@@ -26,7 +28,7 @@
         if (heroShell) {
             heroShell.classList.toggle('is-scroll-compressed', scrollY > 60);
             if (!userToggledBanner && heroShell.dataset.autoCollapse === 'true') {
-                if (!isAutoCollapsed && scrollY > 240) {
+                if (!isAutoCollapsed && scrollY > 220) {
                     isAutoCollapsed = true;
                 } else if (isAutoCollapsed && scrollY < 24) {
                     isAutoCollapsed = false;
@@ -42,7 +44,7 @@
         }
 
         if (backToTop) {
-            backToTop.classList.toggle('is-visible', scrollY > 280);
+            backToTop.classList.toggle('is-visible', scrollY > 260);
         }
     }
 
@@ -63,7 +65,7 @@
         });
     }
 
-    // Scroll reveal animations
+    // Reveal items immediately if visible, otherwise observe scroll
     const revealItems = document.querySelectorAll('[data-reveal]');
     if ('IntersectionObserver' in window && revealItems.length) {
         const revealObserver = new IntersectionObserver(function (entries, observer) {
@@ -73,10 +75,15 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05 });
 
         revealItems.forEach(function (el) {
-            revealObserver.observe(el);
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('is-revealed');
+            } else {
+                revealObserver.observe(el);
+            }
         });
     } else {
         revealItems.forEach(function (el) {
