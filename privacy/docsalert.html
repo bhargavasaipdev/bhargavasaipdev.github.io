@@ -6,22 +6,31 @@
     <title>DocsAlert - Privacy Policy | Ai Syntax</title>
     <link rel="icon" type="image/png" href="../assets/docsalert/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-sm navbar-dark site-navbar sticky-top py-2">
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <nav class="navbar navbar-expand-md navbar-dark site-navbar sticky-top py-2">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html">
-                <img src="../assets/index/ai-syntax-logo.png" alt="Ai Syntax Logo" class="brand-logo">
-                <span>Ai Syntax</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="d-flex align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold me-1" href="../index.html">
+                    <img src="../assets/index/ai-syntax-logo.png" alt="Ai Syntax Logo" class="brand-logo">
+                    <span>Ai Syntax</span>
+                </a>
+                <span class="nav-context-pill d-none d-sm-inline-flex">
+                    <img src="../assets/docsalert/logo.png" alt="">
+                    <span>DocsAlert &middot; Privacy Policy</span>
+                </span>
+            </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto gap-sm-2">
+                <ul class="navbar-nav ms-auto gap-md-1 mt-2 mt-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
@@ -36,107 +45,186 @@
         </div>
     </nav>
 
-    <header class="page-hero page-hero--with-overlap">
-        <div class="container narrow-container">
-            <div class="cover-frame cover-frame--compact mb-4">
-                <img src="../assets/docsalert/feature-graphic.png" alt="DocsAlert Feature Banner">
+    <header class="hero-shell py-4 py-md-5 px-3" data-auto-collapse="true">
+        <div class="container" style="max-width: 1080px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="studio-pill">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Privacy Policy</span>
+                </span>
+                <button type="button" id="bannerToggleBtn" class="banner-toggle-btn" aria-expanded="true">
+                    <i class="bi bi-chevron-up"></i>
+                    <span id="bannerToggleLabel">Collapse Banner</span>
+                </button>
             </div>
+
+            <div class="hero-collapsible mb-4">
+                <div class="hero-collapsible-inner">
+                    <div class="cover-frame cover-frame--compact">
+                        <img src="../assets/docsalert/feature-graphic.png" alt="DocsAlert Feature Banner">
+                    </div>
+                </div>
+            </div>
+
             <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 text-center text-sm-start">
                 <img src="../assets/docsalert/logo.png" alt="DocsAlert Icon" class="app-icon-hero">
                 <div>
-                    <h1 class="h2 fw-bold mb-1">DocsAlert</h1>
+                    <h1 class="h2 hero-title mb-1">DocsAlert</h1>
                     <p class="text-light opacity-75 mb-0">Document Expiry Tracker &amp; Private On-Device Vault</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="container overlap-container mb-5 flex-grow-1">
-        <div class="card content-card p-4 p-md-5">
-            <div class="mb-3">
-                <a href="../index.html" class="back-link">&larr; Back to Ai Syntax Home</a>
-            </div>
+    <main class="container my-5 flex-grow-1" style="max-width: 1080px;">
+        <div class="row g-4 align-items-start">
+            <!-- Sticky Table of Contents (Desktop) / Collapsible TOC (Mobile) -->
+            <aside class="col-lg-4">
+                <div class="toc-card">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="small fw-bold text-uppercase text-secondary">Policy Sections</span>
+                        <button class="btn btn-sm btn-outline-secondary d-lg-none rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#tocCollapse" aria-expanded="false">
+                            Menu <i class="bi bi-chevron-down ms-1"></i>
+                        </button>
+                    </div>
+                    <nav id="tocCollapse" class="collapse d-lg-block" aria-label="Privacy Policy Sections">
+                        <a href="#section-1" class="toc-link is-active"><span class="fw-bold">1.</span> Information Collection &amp; Storage</a>
+                        <a href="#section-2" class="toc-link"><span class="fw-bold">2.</span> Third-Party Services &amp; AdMob</a>
+                        <a href="#section-3" class="toc-link"><span class="fw-bold">3.</span> Device Permissions Requested</a>
+                        <a href="#section-4" class="toc-link"><span class="fw-bold">4.</span> Data Security &amp; User Control</a>
+                        <a href="#section-5" class="toc-link"><span class="fw-bold">5.</span> Children&rsquo;s Privacy</a>
+                        <a href="#section-6" class="toc-link"><span class="fw-bold">6.</span> Changes to This Policy</a>
+                        <a href="#section-7" class="toc-link"><span class="fw-bold">7.</span> Contact Us</a>
+                    </nav>
+                </div>
+            </aside>
 
-            <h1 class="h2 policy-title mb-2">Privacy Policy</h1>
-            <p class="text-secondary small mb-0">
-                <strong>Last Updated:</strong> November 26, 2026 &nbsp;|&nbsp;
-                <strong>Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti
-            </p>
+            <!-- Policy Document -->
+            <div class="col-lg-8">
+                <div class="card content-card p-4 p-md-5">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                        <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i>Back to Ai Syntax Home</a>
+                        <span class="badge rounded-pill text-bg-light border text-secondary fw-semibold px-3 py-2">
+                            Last Updated: November 26, 2026
+                        </span>
+                    </div>
 
-            <hr class="my-4" style="border-color: var(--border-subtle); opacity: 1;">
+                    <h1 class="h2 policy-title mb-2">DocsAlert Privacy Policy</h1>
+                    <p class="text-secondary small mb-0">
+                        <strong>Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti
+                    </p>
 
-            <p>
-                Welcome to <strong>DocsAlert</strong>, operated by <strong>Ai Syntax</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). We respect your privacy and are committed to protecting the personal data and document information you manage using our application.
-            </p>
-            <p>
-                This Privacy Policy explains how DocsAlert handles your information, what data is processed, and your rights regarding your data.
-            </p>
+                    <hr class="my-4" style="border-color: var(--border-subtle); opacity: 1;">
 
-            <h2>1. Information Collection and Storage</h2>
+                    <p>
+                        Welcome to <strong>DocsAlert</strong>, operated by <strong>Ai Syntax</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). We respect your privacy and are committed to protecting the personal data and document information you manage using our application.
+                    </p>
+                    <p class="mb-4">
+                        This Privacy Policy explains how DocsAlert handles your information, what data is processed, and your rights regarding your data.
+                    </p>
 
-            <h3>A. Local On-Device Data (100% Private to You)</h3>
-            <p>DocsAlert is designed with a <strong>privacy-first, on-device storage architecture</strong>:</p>
-            <ul>
-                <li><strong>Document &amp; Credential Metadata:</strong> All document names, categories, issue/expiry dates, notes, and credential numbers (PAN, Aadhaar, Passport, etc.) are saved locally on your device in a private, isolated SQLite database.</li>
-                <li><strong>Item Vault &amp; Attachment Files:</strong> All photos and PDF files stored in the Item Vault or attached to Family Member profiles are saved in DocsAlert&rsquo;s private internal storage directory on your phone.</li>
-                <li><strong>No Server Uploads:</strong> DocsAlert does not operate external cloud servers or databases. Your document metadata, photos, and files are <strong>never uploaded, transmitted, or shared</strong> with Ai Syntax or any external third party.</li>
-            </ul>
+                    <section id="section-1" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">1</span>
+                            <h2>Information Collection and Storage</h2>
+                        </div>
 
-            <h3>B. App Preferences &amp; Security Toggles</h3>
-            <p>
-                Your preferences (Theme settings, Notification sound choices, Daily alarm time, App Lock settings, and Number masking toggles) are stored locally on your device via Android DataStore.
-            </p>
+                        <h3>A. Local On-Device Data (100% Private to You)</h3>
+                        <p>DocsAlert is designed with a <strong>privacy-first, on-device storage architecture</strong>:</p>
+                        <ul>
+                            <li><strong>Document &amp; Credential Metadata:</strong> All document names, categories, issue/expiry dates, notes, and credential numbers (PAN, Aadhaar, Passport, etc.) are saved locally on your device in a private, isolated SQLite database.</li>
+                            <li><strong>Item Vault &amp; Attachment Files:</strong> All photos and PDF files stored in the Item Vault or attached to Family Member profiles are saved in DocsAlert&rsquo;s private internal storage directory on your phone.</li>
+                            <li><strong>No Server Uploads:</strong> DocsAlert does not operate external cloud servers or databases. Your document metadata, photos, and files are <strong>never uploaded, transmitted, or shared</strong> with Ai Syntax or any external third party.</li>
+                        </ul>
 
-            <h2>2. Third-Party Services and Advertising (Google AdMob)</h2>
-            <p>
-                DocsAlert uses <strong>Google Mobile Ads (AdMob)</strong> to serve advertisements within the application. While DocsAlert does not collect or transmit your personal documents, Google AdMob may automatically process certain technical device identifiers to deliver relevant ads, prevent ad fraud, and provide analytics:
-            </p>
-            <p class="fw-semibold mb-2">Information Processed by Google AdMob:</p>
-            <ul>
-                <li>Device Advertising ID (GAID)</li>
-                <li>IP Address &amp; General Location (Country/City level)</li>
-                <li>App Interaction &amp; Performance Diagnostics</li>
-                <li>Crash logs and System Performance metrics</li>
-            </ul>
-            <p>
-                This data is processed directly by Google in accordance with
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Privacy Policy</a>.
-            </p>
+                        <h3>B. App Preferences &amp; Security Toggles</h3>
+                        <p class="mb-0">
+                            Your preferences (Theme settings, Notification sound choices, Daily alarm time, App Lock settings, and Number masking toggles) are stored locally on your device via Android DataStore.
+                        </p>
+                    </section>
 
-            <h2>3. Device Permissions Requested</h2>
-            <p>DocsAlert requests specific Android permissions strictly to provide its core features:</p>
-            <ul>
-                <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Required to send you timely expiry alerts and daily task notifications.</li>
-                <li><strong>Exact Alarms (<code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>):</strong> Required to trigger alarm alerts precisely at your scheduled time.</li>
-                <li><strong>Full-Screen Alerts (<code>USE_FULL_SCREEN_INTENT</code>):</strong> Allows full-screen caller-style alarm overlays over the lock screen for critical document expiration alerts.</li>
-                <li><strong>Biometrics (<code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code>):</strong> Used locally on-device to verify your identity when unlocking the optional App Lock feature.</li>
-            </ul>
+                    <section id="section-2" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">2</span>
+                            <h2>Third-Party Services and Advertising (Google AdMob)</h2>
+                        </div>
+                        <p>
+                            DocsAlert uses <strong>Google Mobile Ads (AdMob)</strong> to serve advertisements within the application. While DocsAlert does not collect or transmit your personal documents, Google AdMob may automatically process certain technical device identifiers to deliver relevant ads, prevent ad fraud, and provide analytics:
+                        </p>
+                        <p class="fw-semibold mb-2">Information Processed by Google AdMob:</p>
+                        <ul>
+                            <li>Device Advertising ID (GAID)</li>
+                            <li>IP Address &amp; General Location (Country/City level)</li>
+                            <li>App Interaction &amp; Performance Diagnostics</li>
+                            <li>Crash logs and System Performance metrics</li>
+                        </ul>
+                        <p class="mb-0">
+                            This data is processed directly by Google in accordance with
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Privacy Policy</a>.
+                        </p>
+                    </section>
 
-            <h2>4. Data Security and User Control</h2>
-            <ul>
-                <li><strong>On-Device Security:</strong> You can enable Biometric App Lock in Settings to protect DocsAlert when backgrounded.</li>
-                <li><strong>Masking Sensitive Numbers:</strong> You can enable Mask Sensitive Numbers in Settings to obscure document numbers by default.</li>
-                <li><strong>Backup &amp; Restore:</strong> DocsAlert allows you to export your data and files to a local JSON backup file. You retain full control over where this file is stored and shared.</li>
-                <li><strong>Data Deletion:</strong> Since all data is stored locally, uninstalling DocsAlert or clearing the app data in Android Settings permanently deletes all stored items, family profiles, and vault files from your device.</li>
-            </ul>
+                    <section id="section-3" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">3</span>
+                            <h2>Device Permissions Requested</h2>
+                        </div>
+                        <p>DocsAlert requests specific Android permissions strictly to provide its core features:</p>
+                        <ul class="mb-0">
+                            <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Required to send you timely expiry alerts and daily task notifications.</li>
+                            <li><strong>Exact Alarms (<code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>):</strong> Required to trigger alarm alerts precisely at your scheduled time.</li>
+                            <li><strong>Full-Screen Alerts (<code>USE_FULL_SCREEN_INTENT</code>):</strong> Allows full-screen caller-style alarm overlays over the lock screen for critical document expiration alerts.</li>
+                            <li><strong>Biometrics (<code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code>):</strong> Used locally on-device to verify your identity when unlocking the optional App Lock feature.</li>
+                        </ul>
+                    </section>
 
-            <h2>5. Children&rsquo;s Privacy</h2>
-            <p>
-                DocsAlert is a general-purpose document management and reminder application intended for adult users. We do not knowingly collect personal information from children under the age of 13.
-            </p>
+                    <section id="section-4" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">4</span>
+                            <h2>Data Security and User Control</h2>
+                        </div>
+                        <ul class="mb-0">
+                            <li><strong>On-Device Security:</strong> You can enable Biometric App Lock in Settings to protect DocsAlert when backgrounded.</li>
+                            <li><strong>Masking Sensitive Numbers:</strong> You can enable Mask Sensitive Numbers in Settings to obscure document numbers by default.</li>
+                            <li><strong>Backup &amp; Restore:</strong> DocsAlert allows you to export your data and files to a local JSON backup file. You retain full control over where this file is stored and shared.</li>
+                            <li><strong>Data Deletion:</strong> Since all data is stored locally, uninstalling DocsAlert or clearing the app data in Android Settings permanently deletes all stored items, family profiles, and vault files from your device.</li>
+                        </ul>
+                    </section>
 
-            <h2>6. Changes to This Privacy Policy</h2>
-            <p>
-                We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated &ldquo;Last Updated&rdquo; date.
-            </p>
+                    <section id="section-5" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">5</span>
+                            <h2>Children&rsquo;s Privacy</h2>
+                        </div>
+                        <p class="mb-0">
+                            DocsAlert is a general-purpose document management and reminder application intended for adult users. We do not knowingly collect personal information from children under the age of 13.
+                        </p>
+                    </section>
 
-            <h2>7. Contact Us</h2>
-            <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or DocsAlert, please contact us at:</p>
-            <div class="bg-light border rounded-4 p-3">
-                <p class="mb-1"><strong>Publisher / Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti</p>
-                <p class="mb-1"><strong>Contact Email:</strong> <a href="mailto:bhargavasaip.dev@gmail.com">bhargavasaip.dev@gmail.com</a></p>
-                <p class="mb-1"><strong>Location:</strong> India, Andhra Pradesh</p>
-                <p class="mb-0"><strong>Support Page:</strong> <a href="../contact.html">Contact Us</a></p>
+                    <section id="section-6" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">6</span>
+                            <h2>Changes to This Privacy Policy</h2>
+                        </div>
+                        <p class="mb-0">
+                            We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated &ldquo;Last Updated&rdquo; date.
+                        </p>
+                    </section>
+
+                    <section id="section-7" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">7</span>
+                            <h2>Contact Us</h2>
+                        </div>
+                        <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or DocsAlert, please contact us at:</p>
+                        <div class="bg-light border rounded-4 p-4">
+                            <p class="mb-1"><strong>Publisher / Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti</p>
+                            <p class="mb-1"><strong>Contact Email:</strong> <a href="mailto:bhargavasaip.dev@gmail.com">bhargavasaip.dev@gmail.com</a></p>
+                            <p class="mb-1"><strong>Location:</strong> India, Andhra Pradesh</p>
+                            <p class="mb-0"><strong>Support Page:</strong> <a href="../contact.html">Contact Us</a></p>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
@@ -157,6 +245,11 @@
         </div>
     </footer>
 
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>
