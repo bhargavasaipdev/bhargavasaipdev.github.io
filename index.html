@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/site.css?v=4">
+    <link rel="stylesheet" href="assets/css/site.css?v=5">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -46,30 +46,19 @@
         </div>
     </nav>
 
-    <header class="hero-shell py-4 px-3" data-auto-collapse="false">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="studio-pill">
+    <header class="hero-seamless">
+        <div class="hero-cover-stage">
+            <img src="assets/index/cover-photo.png" alt="Ai Syntax - Learn. Build. Grow." width="2144" height="733" decoding="async">
+        </div>
+
+        <div class="container hero-copy-band px-3 text-center">
+            <div class="mx-auto" style="max-width: 740px;">
+                <span class="studio-pill mb-3">
                     <i class="bi bi-stars"></i>
                     <span>Official Developer Studio</span>
                 </span>
-                <button type="button" id="bannerToggleBtn" class="banner-toggle-btn" aria-expanded="true">
-                    <i class="bi bi-chevron-up"></i>
-                    <span id="bannerToggleLabel">Collapse Banner</span>
-                </button>
-            </div>
-
-            <div class="hero-collapsible mb-4">
-                <div class="hero-collapsible-inner">
-                    <div class="cover-frame">
-                        <img src="assets/index/cover-photo.png" alt="Ai Syntax - Learn. Build. Grow. Cover Banner" width="2144" height="733" decoding="async">
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mx-auto" style="max-width: 720px;">
-                <h1 class="h2 hero-title mb-2">Building Privacy-First Mobile &amp; Productivity Apps</h1>
-                <p class="text-light opacity-75 mb-4">
+                <h1 class="hero-title mb-2">Building Privacy-First Mobile &amp; Productivity Apps</h1>
+                <p class="hero-subtitle text-light opacity-75 mb-4">
                     Crafted by <strong>Bhargava Sai Pinninti</strong> under <strong>Ai Syntax</strong>. Every application is engineered with local-first reliability, modern design, and clear privacy standards.
                 </p>
                 <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -86,9 +75,9 @@
 
     <main class="flex-grow-1">
         <!-- Studio Pillars -->
-        <section class="container my-5" data-reveal>
-            <div class="row g-4">
-                <div class="col-md-4">
+        <section class="container my-4 my-md-5" data-reveal>
+            <div class="row g-3 g-md-4">
+                <div class="col-12 col-md-4">
                     <div class="bento-tile">
                         <div class="bento-icon bento-icon--blue">
                             <i class="bi bi-shield-lock-fill"></i>
@@ -99,7 +88,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="bento-tile">
                         <div class="bento-icon bento-icon--amber">
                             <i class="bi bi-lightning-charge-fill"></i>
@@ -110,7 +99,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="bento-tile">
                         <div class="bento-icon bento-icon--emerald">
                             <i class="bi bi-file-earmark-check-fill"></i>
@@ -124,43 +113,43 @@
             </div>
         </section>
 
-        <!-- Apps Showcase -->
-        <section id="apps" class="container my-5 pt-2">
-            <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4 gap-2" data-reveal>
-                <div>
-                    <span class="text-primary fw-bold text-uppercase small">Portfolio</span>
-                    <h2 class="h2 section-title mb-1">Published Applications</h2>
-                    <p class="text-secondary mb-0">Explore each product and review its dedicated privacy policy.</p>
-                </div>
+        <!-- Apps Showcase (Logo + Description only) -->
+        <section id="apps" class="container my-5 pt-1">
+            <div class="mb-4" data-reveal>
+                <span class="text-primary fw-bold text-uppercase small">Portfolio</span>
+                <h2 class="section-title mb-1">Published Applications</h2>
+                <p class="text-secondary mb-0">Explore each product and review its dedicated privacy policy.</p>
             </div>
 
             <div class="row row-cols-1 row-cols-lg-2 g-4">
                 <!-- DocsAlert -->
                 <div class="col" data-reveal>
-                    <article class="card app-card h-100 d-flex flex-column">
-                        <div class="app-banner-wrap">
-                            <img src="assets/docsalert/feature-graphic.png" alt="DocsAlert Feature Graphic" width="1024" height="500" class="app-feature-banner" decoding="async">
-                        </div>
-                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex align-items-end gap-3 mb-3">
-                                <img src="assets/docsalert/logo.png" alt="DocsAlert App Icon" width="60" height="60" class="app-icon-float">
-                                <div>
-                                    <span class="badge rounded-pill text-bg-success bg-opacity-10 text-success border border-success border-opacity-25 fw-semibold mb-1">
-                                        <i class="bi bi-check-circle-fill me-1"></i>Active Policy
-                                    </span>
-                                    <h3 class="h4 app-title mb-0">DocsAlert</h3>
+                    <article class="card app-card h-100">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <img src="assets/docsalert/logo.png" alt="DocsAlert App Icon" width="64" height="64" class="app-icon-card">
+                                <div class="min-w-0">
+                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                                        <h3 class="h4 app-title mb-0">DocsAlert</h3>
+                                        <span class="badge rounded-pill text-bg-success bg-opacity-10 text-success border border-success border-opacity-25 fw-semibold">
+                                            <i class="bi bi-check-circle-fill me-1"></i>Active Policy
+                                        </span>
+                                    </div>
+                                    <p class="text-secondary small fw-semibold mb-0">Document Expiry Tracker &amp; Private On-Device Vault</p>
                                 </div>
                             </div>
-                            <p class="text-secondary small fw-semibold mb-2">Document Expiry Tracker &amp; Private On-Device Vault</p>
+
                             <p class="mb-4 flex-grow-1">
                                 Track passport, PAN, Aadhaar, and critical document expiry dates with exact alarms, full-screen reminders, and an encrypted local vault with biometric lock.
                             </p>
+
                             <div class="d-flex flex-wrap gap-2 mb-4">
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-phone me-1"></i>On-Device Vault</span>
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-alarm me-1"></i>Exact Alarms</span>
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-fingerprint me-1"></i>Biometric Lock</span>
                             </div>
-                            <div class="d-flex align-items-center justify-content-between pt-3 border-top">
+
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 border-top">
                                 <span class="small text-secondary"><i class="bi bi-android2 me-1 text-success"></i>Android App</span>
                                 <a href="privacy/docsalert.html" class="btn btn-brand rounded-pill px-4 py-2">
                                     Privacy Policy <i class="bi bi-arrow-right ms-1"></i>
@@ -172,30 +161,32 @@
 
                 <!-- ReportCraft -->
                 <div class="col" data-reveal>
-                    <article class="card app-card h-100 d-flex flex-column">
-                        <div class="app-banner-wrap">
-                            <img src="assets/reportcraft/feature-graphic.png" alt="ReportCraft Feature Graphic" width="2976" height="1440" class="app-feature-banner" decoding="async">
-                        </div>
-                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex align-items-end gap-3 mb-3">
-                                <img src="assets/reportcraft/logo.png" alt="ReportCraft App Icon" width="60" height="60" class="app-icon-float">
-                                <div>
-                                    <span class="badge rounded-pill text-bg-warning bg-opacity-25 text-dark border border-warning border-opacity-50 fw-semibold mb-1">
-                                        <i class="bi bi-clock-history me-1"></i>Coming Soon
-                                    </span>
-                                    <h3 class="h4 app-title mb-0">ReportCraft</h3>
+                    <article class="card app-card h-100">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <img src="assets/reportcraft/logo.png" alt="ReportCraft App Icon" width="64" height="64" class="app-icon-card">
+                                <div class="min-w-0">
+                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                                        <h3 class="h4 app-title mb-0">ReportCraft</h3>
+                                        <span class="badge rounded-pill text-bg-warning bg-opacity-25 text-dark border border-warning border-opacity-50 fw-semibold">
+                                            <i class="bi bi-clock-history me-1"></i>Coming Soon
+                                        </span>
+                                    </div>
+                                    <p class="text-secondary small fw-semibold mb-0">Excel to Reports &mdash; Create, Customize &amp; Track</p>
                                 </div>
                             </div>
-                            <p class="text-secondary small fw-semibold mb-2">Excel to Reports &mdash; Create, Customize &amp; Track</p>
+
                             <p class="mb-4 flex-grow-1">
                                 Convert Excel and CSV spreadsheets into clean, customizable visual reports with performance charts, summaries, and instant PDF or PNG exports.
                             </p>
+
                             <div class="d-flex flex-wrap gap-2 mb-4">
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-file-earmark-spreadsheet me-1"></i>XLSX / CSV</span>
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-bar-chart-fill me-1"></i>Visual Charts</span>
                                 <span class="badge rounded-pill feature-badge px-3 py-2"><i class="bi bi-filetype-pdf me-1"></i>PDF &amp; PNG</span>
                             </div>
-                            <div class="d-flex align-items-center justify-content-between pt-3 border-top">
+
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 border-top">
                                 <span class="small text-secondary"><i class="bi bi-stars me-1 text-primary"></i>Upcoming Release</span>
                                 <a href="privacy/reportcraft.html" class="btn btn-brand rounded-pill px-4 py-2">
                                     Privacy Policy <i class="bi bi-arrow-right ms-1"></i>
@@ -245,6 +236,6 @@
     </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/site.js?v=4"></script>
+    <script src="assets/js/site.js?v=5"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     --brand-primary-hover: #1d4ed8;
     --brand-amber: #f59e0b;
     --brand-emerald: #10b981;
+    --surface-black: #000000;
     --surface-dark: #06080f;
     --surface-dark-2: #0c1220;
     --surface-dark-3: #131c31;
@@ -27,6 +28,7 @@ body {
     background-color: var(--bg-page);
     color: var(--text-body);
     line-height: 1.65;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -44,17 +46,17 @@ body {
 
 /* Glassmorphic Sticky Navbar */
 .site-navbar {
-    background-color: rgba(6, 8, 15, 0.9);
+    background-color: rgba(0, 0, 0, 0.88);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     transition: background-color 0.25s ease, box-shadow 0.25s ease;
     z-index: 1050;
 }
 
 .site-navbar.is-scrolled {
     background-color: rgba(6, 8, 15, 0.96);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .brand-logo {
@@ -134,13 +136,71 @@ body {
     flex-shrink: 0;
 }
 
-/* Collapsible Hero Banner */
+/* Seamless Home Hero (Cover melts into #000000 backdrop) */
+.hero-seamless {
+    position: relative;
+    background: linear-gradient(180deg, var(--surface-black) 0%, var(--surface-black) 62%, var(--surface-dark) 100%);
+    color: #ffffff;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-cover-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.hero-cover-stage img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Edge-feathering overlay so black cover photo blends invisibly on all viewports */
+.hero-cover-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 92%, #000000 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 68%, #020306 100%);
+}
+
+.hero-seamless.is-scroll-compressed .hero-cover-stage {
+    transform: scale(0.985);
+    opacity: 0.9;
+}
+
+.hero-copy-band {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(-2.5rem, -4vw, -0.5rem);
+    padding-bottom: clamp(2rem, 4vw, 3.25rem);
+}
+
+.hero-title {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: clamp(1.5rem, 2.3vw + 0.75rem, 2.45rem);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.95rem, 0.6vw + 0.8rem, 1.12rem);
+}
+
+/* Collapsible Inner-Page Hero Banner */
 .hero-shell {
     position: relative;
     background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.22), transparent 70%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.2), transparent 70%),
         radial-gradient(ellipse 60% 50% at 85% 20%, rgba(245, 158, 11, 0.12), transparent 65%),
-        linear-gradient(180deg, var(--surface-dark) 0%, var(--surface-dark-2) 100%);
+        linear-gradient(180deg, var(--surface-black) 0%, var(--surface-dark-2) 100%);
     color: #ffffff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
@@ -218,7 +278,7 @@ body {
     transform: rotate(180deg);
 }
 
-/* Hero Badges & Typography */
+/* Hero Badges */
 .studio-pill {
     display: inline-flex;
     align-items: center;
@@ -231,11 +291,6 @@ body {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-}
-
-.hero-title {
-    font-weight: 800;
-    letter-spacing: -0.03em;
 }
 
 /* App Icon in Split Hero */
@@ -257,7 +312,7 @@ body {
     background: var(--surface-card);
     border: 1px solid var(--border-subtle);
     border-radius: 1.15rem;
-    padding: 1.4rem;
+    padding: clamp(1.15rem, 2vw, 1.5rem);
     box-shadow: var(--shadow-sm);
     height: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -294,54 +349,37 @@ body {
     color: #059669;
 }
 
-/* Editorial App Cards */
+/* Clean Logo + Description App Cards (No cover image on index) */
 .app-card {
     background-color: var(--surface-card);
     border: 1px solid var(--border-subtle);
     border-radius: 1.25rem;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.22);
 }
 
-.app-banner-wrap {
-    overflow: hidden;
-    border-bottom: 1px solid var(--border-subtle);
-    background: #0c1220;
-}
-
-.app-feature-banner {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1024 / 500;
+.app-icon-card {
+    width: clamp(56px, 8vw, 68px);
+    height: clamp(56px, 8vw, 68px);
+    max-width: 68px;
+    max-height: 68px;
     object-fit: cover;
-    display: block;
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.app-card:hover .app-feature-banner {
-    transform: scale(1.03);
-}
-
-.app-icon-float {
-    width: 60px;
-    height: 60px;
-    max-width: 60px;
-    max-height: 60px;
-    object-fit: cover;
-    border-radius: 14px;
+    border-radius: 16px;
     background: #ffffff;
-    border: 3px solid #ffffff;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
-    margin-top: -2.25rem;
-    position: relative;
-    z-index: 2;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
     flex-shrink: 0;
+}
+
+.section-title {
+    font-size: clamp(1.35rem, 1.5vw + 0.9rem, 1.85rem);
 }
 
 .section-title,
@@ -398,7 +436,7 @@ body {
 }
 
 .content-card h2 {
-    font-size: 1.18rem;
+    font-size: clamp(1.08rem, 0.5vw + 0.95rem, 1.22rem);
     margin: 0;
 }
 
@@ -446,6 +484,7 @@ code {
     border-radius: 0.35rem;
     font-size: 0.85em;
     font-weight: 600;
+    word-break: break-word;
 }
 
 li {
@@ -484,7 +523,7 @@ li {
 
 /* CTA Banner */
 .cta-panel {
-    background: linear-gradient(135deg, var(--surface-dark) 0%, var(--surface-dark-3) 100%);
+    background: linear-gradient(135deg, var(--surface-black) 0%, var(--surface-dark-3) 100%);
     border-radius: 1.35rem;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -494,8 +533,8 @@ li {
 /* Floating Back-to-Top */
 .back-to-top {
     position: fixed;
-    right: 1.25rem;
-    bottom: 1.25rem;
+    right: 1.15rem;
+    bottom: 1.15rem;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -523,7 +562,7 @@ li {
     background: var(--brand-primary);
 }
 
-/* Safe Scroll Reveal (never leaves content hidden if JS hasn't run) */
+/* Safe Scroll Reveal */
 html.has-js [data-reveal] {
     opacity: 0;
     transform: translateY(14px);
@@ -540,6 +579,9 @@ html.has-js [data-reveal].is-revealed {
         max-width: 100%;
         margin: 0 auto;
     }
+    .hero-copy-band {
+        margin-top: 0.25rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -553,14 +595,14 @@ html.has-js [data-reveal].is-revealed {
     }
     .hero-collapsible,
     .app-card,
-    .app-feature-banner {
+    .hero-cover-stage {
         transition: none;
     }
 }
 
 /* Footer */
 .site-footer {
-    background-color: var(--surface-dark);
+    background-color: var(--surface-black);
     color: #94a3b8;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
