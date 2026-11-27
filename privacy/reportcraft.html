@@ -46,13 +46,13 @@
     </nav>
 
     <header class="hero-shell py-4 px-3" data-auto-collapse="true">
-        <div class="container" style="max-width: 980px;">
+        <div class="container" style="max-width: 1080px;">
             <div class="row align-items-center g-4">
                 <div class="col-md-7">
                     <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                         <span class="studio-pill">
-                            <i class="bi bi-clock-history"></i>
-                            <span>Privacy Policy &middot; Coming Soon</span>
+                            <i class="bi bi-shield-check"></i>
+                            <span>Privacy Policy</span>
                         </span>
                         <button type="button" id="bannerToggleBtn" class="banner-toggle-btn" aria-expanded="true">
                             <i class="bi bi-chevron-up"></i>
@@ -80,43 +80,152 @@
         </div>
     </header>
 
-    <main class="container my-5 flex-grow-1" style="max-width: 980px;">
-        <div class="card content-card p-4 p-md-5" data-reveal>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i>Back to Ai Syntax Home</a>
-                <span class="badge rounded-pill text-bg-warning text-dark fw-bold px-3 py-2">
-                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
-                </span>
+    <main class="container my-5 flex-grow-1" style="max-width: 1080px;">
+        <div class="row g-4 align-items-start">
+            <!-- Sticky Table of Contents (Desktop) / Collapsible TOC (Mobile) -->
+            <aside class="col-lg-4">
+                <div class="toc-card">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="small fw-bold text-uppercase text-secondary">Policy Sections</span>
+                        <button class="btn btn-sm btn-outline-secondary d-lg-none rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#tocCollapse" aria-expanded="false">
+                            Menu <i class="bi bi-chevron-down ms-1"></i>
+                        </button>
+                    </div>
+                    <nav id="tocCollapse" class="collapse d-lg-block" aria-label="Privacy Policy Sections">
+                        <a href="#section-1" class="toc-link is-active"><span class="fw-bold">1.</span> Offline Local Storage &amp; Processing</a>
+                        <a href="#section-2" class="toc-link"><span class="fw-bold">2.</span> Third-Party Advertising (AdMob)</a>
+                        <a href="#section-3" class="toc-link"><span class="fw-bold">3.</span> App Permissions &amp; Usage</a>
+                        <a href="#section-4" class="toc-link"><span class="fw-bold">4.</span> Children&rsquo;s Privacy</a>
+                        <a href="#section-5" class="toc-link"><span class="fw-bold">5.</span> Data Security</a>
+                        <a href="#section-6" class="toc-link"><span class="fw-bold">6.</span> Changes to This Policy</a>
+                        <a href="#section-7" class="toc-link"><span class="fw-bold">7.</span> Contact Us</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Policy Document -->
+            <div class="col-lg-8">
+                <div class="card content-card p-4 p-md-5">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                        <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i>Back to Ai Syntax Home</a>
+                        <span class="badge rounded-pill text-bg-light border text-secondary fw-semibold px-3 py-2">
+                            Effective Date: October 29, 2026
+                        </span>
+                    </div>
+
+                    <h1 class="h2 policy-title mb-2">Privacy Policy for ReportCraft</h1>
+                    <p class="text-secondary small mb-0">
+                        <strong>Application:</strong> ReportCraft (<code>com.aisyntax.reportcraft</code>) &nbsp;|&nbsp;
+                        <strong>Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti
+                    </p>
+
+                    <hr class="my-4" style="border-color: var(--border-subtle); opacity: 1;">
+
+                    <p class="mb-4">
+                        <strong>ReportCraft</strong> (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how our mobile application, ReportCraft (the &ldquo;App&rdquo;), handles information when you use our services.
+                    </p>
+
+                    <section id="section-1" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">1</span>
+                            <h2>100% Offline Local Data Storage &amp; Processing</h2>
+                        </div>
+                        <p>
+                            ReportCraft is designed to operate primarily offline to ensure maximum data privacy for educators, teachers, school administrators, and academic institutions:
+                        </p>
+                        <ul class="mb-0">
+                            <li><strong>Local Student Records:</strong> All student names, roll numbers, raw marks, subject data, and academic results are processed and stored strictly on your local device storage.</li>
+                            <li><strong>Local School Branding Assets:</strong> All institution names, addresses, logos, banners, class teacher signatures, and principal signatures remain exclusively on your local device.</li>
+                            <li><strong>Local Document Exports:</strong> All generated progress reports, PDFs, and PNG images are saved locally to your device storage (<code>Documents/ReportCraft</code>).</li>
+                            <li><strong>Zero Cloud Uploads:</strong> We do not operate external cloud servers or databases to collect, store, or transmit your student records or academic data.</li>
+                        </ul>
+                    </section>
+
+                    <section id="section-2" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">2</span>
+                            <h2>Information Collected by Third-Party Advertising Services (Google AdMob)</h2>
+                        </div>
+                        <p>
+                            To support the ongoing development and maintenance of ReportCraft, our App uses <strong>Google AdMob</strong> to display advertisements (Banner Ads, Interstitial Ads, Rewarded Video Ads, and Native Ads).
+                        </p>
+                        <p>
+                            Google AdMob may automatically collect and process certain non-personally identifiable information from your device, including:
+                        </p>
+                        <ul>
+                            <li>Unique Device Identifiers (such as the Google Advertising ID / AAID)</li>
+                            <li>IP Address and approximate location</li>
+                            <li>App interaction data and ad performance statistics</li>
+                            <li>System diagnostic and crash logs</li>
+                        </ul>
+                        <p>
+                            This information is collected directly by Google AdMob for ad serving, analytics, personalization, and fraud prevention purposes.
+                        </p>
+                        <p class="mb-0">
+                            For more information on how Google handles advertising data, please review
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Privacy Policy</a>.
+                        </p>
+                    </section>
+
+                    <section id="section-3" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">3</span>
+                            <h2>App Permissions &amp; Usage</h2>
+                        </div>
+                        <p>ReportCraft requests the following permissions to perform its core offline functionalities and ad operations:</p>
+                        <ul class="mb-0">
+                            <li><strong><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>:</strong> Required by Google AdMob to fetch advertisement content.</li>
+                            <li><strong><code>READ_EXTERNAL_STORAGE</code> &amp; <code>WRITE_EXTERNAL_STORAGE</code> (API 26-32):</strong> Required on legacy Android devices to read imported spreadsheets and save generated PDF/PNG report cards.</li>
+                            <li><strong>Storage Access Framework / File Provider (API 33+):</strong> Uses Android&rsquo;s native <code>DocumentFile</code> and <code>FileProvider</code> APIs to allow secure file saving, opening, and sharing without requiring broad storage permissions.</li>
+                        </ul>
+                    </section>
+
+                    <section id="section-4" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">4</span>
+                            <h2>Children&rsquo;s Privacy</h2>
+                        </div>
+                        <p class="mb-0">
+                            ReportCraft is an administrative tool intended for use by teachers, educators, school administrators, and institutions. The App does not knowingly collect or solicit personal data from children under the age of 13. All student data entered by educators is stored locally on the user&rsquo;s device and is not collected or transmitted by us.
+                        </p>
+                    </section>
+
+                    <section id="section-5" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">5</span>
+                            <h2>Data Security</h2>
+                        </div>
+                        <p class="mb-0">
+                            Because all your student records and school branding assets are stored locally on your device, the security of your data depends on your device&rsquo;s security settings (such as screen locks and device encryption). We recommend keeping your device passcode-protected.
+                        </p>
+                    </section>
+
+                    <section id="section-6" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">6</span>
+                            <h2>Changes to This Privacy Policy</h2>
+                        </div>
+                        <p class="mb-0">
+                            We may update our Privacy Policy from time to time. Any changes will be effective immediately upon posting the updated Privacy Policy on this page.
+                        </p>
+                    </section>
+
+                    <section id="section-7" class="policy-section">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="policy-section-badge">7</span>
+                            <h2>Contact Us</h2>
+                        </div>
+                        <p>If you have any questions or suggestions about our Privacy Policy, please contact us at:</p>
+                        <div class="bg-light border rounded-4 p-4">
+                            <p class="mb-1"><strong>Application:</strong> ReportCraft (<code>com.aisyntax.reportcraft</code>)</p>
+                            <p class="mb-1"><strong>Publisher / Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti</p>
+                            <p class="mb-1"><strong>Email:</strong> <a href="mailto:bhargavasaip.dev@gmail.com">bhargavasaip.dev@gmail.com</a></p>
+                            <p class="mb-1"><strong>Location:</strong> India, Andhra Pradesh</p>
+                            <p class="mb-0"><strong>Support Page:</strong> <a href="../contact.html">Contact Us</a></p>
+                        </div>
+                    </section>
+                </div>
             </div>
-
-            <h1 class="h2 policy-title mb-2">ReportCraft Privacy Policy</h1>
-            <p class="text-secondary small mb-0">
-                <strong>Last Updated:</strong> November 26, 2026 &nbsp;|&nbsp;
-                <strong>Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti
-            </p>
-
-            <hr class="my-4" style="border-color: var(--border-subtle); opacity: 1;">
-
-            <p>
-                Welcome to <strong>ReportCraft</strong>, operated by <strong>Ai Syntax</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). We are currently finalizing the full Privacy Policy for ReportCraft prior to its public release.
-            </p>
-            <p class="mb-4">
-                Once published, this page will detail how ReportCraft handles spreadsheet imports, generated reports, device permissions, and any third-party services.
-            </p>
-
-            <section class="policy-section">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <span class="policy-section-badge"><i class="bi bi-envelope"></i></span>
-                    <h2>Contact Us</h2>
-                </div>
-                <p>If you have any questions about ReportCraft or its upcoming Privacy Policy, please contact us at:</p>
-                <div class="bg-light border rounded-4 p-4">
-                    <p class="mb-1"><strong>Publisher / Developer:</strong> Ai Syntax &ndash; Bhargava Sai Pinninti</p>
-                    <p class="mb-1"><strong>Contact Email:</strong> <a href="mailto:bhargavasaip.dev@gmail.com">bhargavasaip.dev@gmail.com</a></p>
-                    <p class="mb-1"><strong>Location:</strong> India, Andhra Pradesh</p>
-                    <p class="mb-0"><strong>Support Page:</strong> <a href="../contact.html">Contact Us</a></p>
-                </div>
-            </section>
         </div>
     </main>
 
